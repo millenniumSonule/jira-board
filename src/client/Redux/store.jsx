@@ -3,7 +3,7 @@ import apiCallDummyReducer from "../Redux/apiCallDummy";
 
 const store = configureStore({
     reducer: {
-        getDummyResponse:apiCallDummyReducer,
+        apiCallDummy: apiCallDummyReducer
     }
 });
 

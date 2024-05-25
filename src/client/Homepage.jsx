@@ -5,13 +5,16 @@ import { fetchProducts } from './Redux/apiCallDummy';
 
 const Homepage = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.getDummyResponse.data);
-  const status = useSelector((state) => state.getDummyResponse.status);
-  const error = useSelector((state) => state.getDummyResponse.error);
+  const products = useSelector((state) => state.apiCallDummy.data); // Accessing data property
+  const status = useSelector((state) => state.apiCallDummy.status);
+  const error = useSelector((state) => state.apiCallDummy.error);
+
 
   useEffect(() => {
+    
     dispatch(fetchProducts());
-  }, [dispatch]);
+    
+  },[dispatch]);
 
   if (status === 'loading') {
     return <div>Loading...</div>;
@@ -23,14 +26,17 @@ const Homepage = () => {
 
   return (
     <div>
-      <h1>Products</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
+        <h1>Products</h1>
+
+        {products.map((item,index)=>(
+            <div key={index}>
+              {index}
+              </div>
         ))}
-      </ul>
+
     </div>
-  );
+);
+
 };
 
 export default Homepage;
