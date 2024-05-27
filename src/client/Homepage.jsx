@@ -17,7 +17,7 @@ const Homepage = () => {
     return <div>Loading...</div>;
   }
 
-  if (status === 'failed') {
+  if (status ===  'failed') {
     return <div>Error: {error}</div>;
   }
 
