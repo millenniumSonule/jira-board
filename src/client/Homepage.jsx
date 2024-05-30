@@ -9,7 +9,7 @@ const Homepage = () => {
   const status = useSelector((state) => state.apiCallDummy.status);
   const error = useSelector((state) => state.apiCallDummy.error);
 
-  // Pagination state
+  // Pagination state 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6; // Number of products to display per page
 
