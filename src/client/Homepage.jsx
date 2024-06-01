@@ -17,7 +17,7 @@ const Homepage = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  if (status === 'loading') {
+  if (status == 'loading') {
     return <div>Loading...</div>;
   }
 
